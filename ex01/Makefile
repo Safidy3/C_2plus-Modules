@@ -1,5 +1,5 @@
-SRCS = megaphone.cpp
-NAME = megaphone
+SRCS = main.cpp Contact.cpp phonebook.cpp
+NAME = PhoneBook
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
 CC = c++
