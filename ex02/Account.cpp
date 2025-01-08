@@ -8,6 +8,8 @@ int	Account::_totalAmount = 0;
 int	Account::_totalNbDeposits = 0;
 int	Account::_totalNbWithdrawals = 0;
 
+// getters
+
 int	Account::getNbAccounts(void)
 {
 	return (_nbAccounts);
@@ -28,29 +30,43 @@ int	Account::getNbWithdrawals(void)
 	return (_totalNbWithdrawals);
 }
 
+int 	Account::checkAmount() const
+{
+	return (this->_amount);
+}
+
 void	Account::_displayTimestamp(void)
 {
-	time_t				curr_time;
-	struct tm			*tm_local;
+	std::time_t	curremt_time;
+	struct tm*	local_time;
+	char		buffer[20];
 
-	time(&curr_time);
-	tm_local = localtime(&curr_time);
-	std::cout << "[" << (tm_local->tm_year + 1900);
-	if (tm_local->tm_mon + 1 < 10)
-		std::cout << "0";
-	std::cout << (tm_local->tm_mon + 1);
-	if (tm_local->tm_mday < 10)
-		std::cout << "0";
-	std::cout << tm_local->tm_mday << "_";
-	if (tm_local->tm_hour < 10)
-		std::cout << "0";
-	std::cout << (tm_local->tm_hour);
-	if (tm_local->tm_min < 10)
-		std::cout << "0";
-	std::cout << (tm_local->tm_min);
-	if (tm_local->tm_sec < 10)
-		std::cout << "0";
-	std::cout << (tm_local->tm_sec) << "] ";
+	curremt_time = std::time(NULL);
+	local_time = std::localtime(&curremt_time);
+	std::strftime(buffer, sizeof(buffer), "[%Y%m%d_%H%M%S]", local_time);
+	std::cout << buffer << " ";
+}
+
+Account::Account(int initial_deposit)
+{
+	this->_accountIndex = _nbAccounts;
+	this->_amount = initial_deposit;
+	this->_nbDeposits = 0;
+	this->_nbWithdrawals = 0;
+	_nbAccounts++;
+	_totalAmount += initial_deposit;
+	_displayTimestamp();
+	std::cout << "index:" << this->_accountIndex << ";";
+	std::cout << "amount:"<< this->_amount << ";";
+	std::cout << "created\n";
+}
+
+Account::~Account()
+{
+	_displayTimestamp();
+	std::cout << "index:" << this->_accountIndex << ";";
+	std::cout << "amount:" << this->_amount << ";";
+	std::cout << "closed\n";
 }
 
 void	Account::displayAccountsInfos()
@@ -60,28 +76,6 @@ void	Account::displayAccountsInfos()
 	std::cout << "total:" << _totalAmount << ";";
 	std::cout << "deposits:"<< _totalNbDeposits << ";";
 	std::cout << "withdrawals:" << _totalNbWithdrawals << std::endl;
-}
-
-Account::Account(int initial_deposit)
-{
-	this->_accountIndex = _nbAccounts;
-	_nbAccounts++;
-	this->_amount = initial_deposit;
-	_totalAmount += initial_deposit;
-	this->_nbDeposits = 0;
-	this->_nbWithdrawals = 0;
-	_displayTimestamp();
-	std::cout << "index:" << this->_accountIndex << ";";
-	std::cout << "amount:"<< this->_amount << ";";
-	std::cout << "created" << std::endl;
-}
-
-Account::~Account()
-{
-	_displayTimestamp();
-	std::cout << "index:" << this->_accountIndex << ";";
-	std::cout << "amount:" << this->_amount << ";";
-	std::cout << "closed" << std::endl;
 }
 
 void	Account::makeDeposit(int deposit)
@@ -119,11 +113,6 @@ bool	Account::makeWithdrawal(int withdrawal)
 	std::cout << "amount:" << this->_amount << ";";
 	std::cout << "nb_withdrawals:" << this->_nbWithdrawals << std::endl;
 	return (true);
-}
-
-int 	Account::checkAmount() const
-{
-	return (this->_amount);
 }
 
 void	Account::displayStatus() const
