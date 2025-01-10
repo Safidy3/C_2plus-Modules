@@ -22,10 +22,4 @@ fclean: clean
 
 re: fclean all
 
-run: all
-	@./$(NAME)
-
-debug: all
-	@valgrind --track-fds=yes --suppressions=readline.supp --leak-check=full --track-origins=yes --show-leak-kinds=all ./$(NAME)
-
 .PHONY: all clean fclean re
