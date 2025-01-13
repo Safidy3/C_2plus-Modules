@@ -15,8 +15,9 @@
 
 # include <iostream>
 # include <string>
+# include <map>
 
-class  Harl {
+class	Harl {
 private:
 	void	debug(void);
 	void	info(void);

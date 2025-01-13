@@ -12,27 +12,37 @@
 
 #include "Harl.hpp"
 
-void    Harl::debug()
+void	Harl::debug()
 {
 	std::cout << "DEBUG level\n";
 }
 
-void    Harl::info()
+void	Harl::info()
 {
 	std::cout << "INFO level\n";
 }
 
-void    Harl::warning()
+void	Harl::warning()
 {
 	std::cout << "WARNING level\n";
 }
 
-void    Harl::error()
+void	Harl::error()
 {
 	std::cout << "ERROR level\n";
 }
 
-void    Harl::complain(std::string level)
+void	Harl::complain(std::string level)
 {
-	debug();
+	std::map<std::string, void (Harl::*)(void)> actions;
+    actions["DEBUG"] = &Harl::debug;
+    actions["INFO"] = &Harl::info;
+    actions["WARNING"] = &Harl::warning;
+    actions["ERROR"] = &Harl::error;
+
+	std::map<std::string, void (Harl::*)(void)>::iterator it = actions.find(level);
+	if (it != actions.end())
+		(this->*(it->second))();
+	else
+		std::cout << "Invalid complaint level: " << level << "\n";
 }

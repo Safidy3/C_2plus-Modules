@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: safandri <safandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/09 10:23:58 by safandri          #+#    #+#             */
-/*   Updated: 2025/01/09 10:23:55 by safandri         ###   ########.fr       */
+/*   Created: 2025/01/09 10:24:21 by safandri          #+#    #+#             */
+/*   Updated: 2025/01/11 10:14:27 by safandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#include "Harl.hpp"
 
-#include <iostream>
+int	main()
+{
+	Harl	harl;
 
-class Zombie {
-	private:
-		std::string m_name;
-	public:
-		Zombie(std::string name);
-		~Zombie();
-		void announce(void);
-};
-
-Zombie*	newZombie(std::string m_name);
-void	randomChump(std::string m_name);
-
-#endif
+	harl.complain("DEBUG");
+	harl.complain("INFO");
+	harl.complain("WARNING");
+	harl.complain("ERROR");
+	return (0);
+}
