@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: safandri <safandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 10:23:58 by safandri          #+#    #+#             */
-/*   Updated: 2025/01/09 10:23:55 by safandri         ###   ########.fr       */
+/*   Updated: 2025/01/15 11:54:32 by safandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Zombie {
 	private:
 		std::string m_name;
 	public:
-		Zombie() {};
+		Zombie();
 		Zombie(std::string name);
 		~Zombie();
 		void setName(std::string name);

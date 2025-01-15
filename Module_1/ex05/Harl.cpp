@@ -6,11 +6,15 @@
 /*   By: safandri <safandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 10:24:21 by safandri          #+#    #+#             */
-/*   Updated: 2025/01/11 10:14:27 by safandri         ###   ########.fr       */
+/*   Updated: 2025/01/15 11:56:56 by safandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
+
+Harl::Harl() {}
+
+Harl::~Harl() {}
 
 void	Harl::debug()
 {

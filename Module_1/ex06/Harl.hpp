@@ -6,7 +6,7 @@
 /*   By: safandri <safandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 10:24:57 by safandri          #+#    #+#             */
-/*   Updated: 2025/01/11 10:14:13 by safandri         ###   ########.fr       */
+/*   Updated: 2025/01/15 11:57:56 by safandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ private:
 	void	error(void);
 
 public:
-	Harl() {};
-	~Harl() {};
+	Harl();
+	~Harl();
 	void	complain(std::string level);
 };
 
