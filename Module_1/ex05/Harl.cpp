@@ -6,7 +6,7 @@
 /*   By: safandri <safandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 10:24:21 by safandri          #+#    #+#             */
-/*   Updated: 2025/01/15 11:56:56 by safandri         ###   ########.fr       */
+/*   Updated: 2025/01/16 09:53:10 by safandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,10 @@ void	Harl::complain(std::string level)
     actions["ERROR"] = &Harl::error;
 
 	std::map<std::string, void (Harl::*)(void)>::iterator it = actions.find(level);
-	if (it != actions.end())
-		(this->*(it->second))();
-	else
+	if (it == actions.end())
+	{
 		std::cout << "Invalid complaint level: " << level << "\n";
+		return ;
+	}
+	(this->*(it->second))();
 }

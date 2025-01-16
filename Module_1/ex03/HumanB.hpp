@@ -6,7 +6,7 @@
 /*   By: safandri <safandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 10:24:14 by safandri          #+#    #+#             */
-/*   Updated: 2025/01/15 11:56:24 by safandri         ###   ########.fr       */
+/*   Updated: 2025/01/16 09:46:38 by safandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class HumanB {
 private:
     std::string	name;
-    Weapon		*weapon = nullptr;
+    Weapon		*weapon;
 public:
     HumanB(std::string name);
     void    setWeapon(Weapon &weapon);
