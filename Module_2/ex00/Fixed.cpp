@@ -16,6 +16,7 @@ static const int	floating_point = 8;
 
 Fixed::Fixed()
 {
+	this->fixed_point = 0;
 	std::cout << "Default constructor called\n";
 }
 
