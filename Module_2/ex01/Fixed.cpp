@@ -24,8 +24,19 @@ Fixed::Fixed(const int n) : fixed_point(n << Fixed::floating_point)
 	std::cout << "Int constructor called\n";
 }
 
-Fixed::Fixed(const float n) : fixed_point(n * (1 << Fixed::floating_point))
+Fixed::Fixed(const float n)
 {
+	int		intPart;
+	float	floatPart;
+	float	rawRes;
+
+	rawRes = n * (1 << Fixed::floating_point);
+	intPart = (int) rawRes;
+	floatPart = rawRes - intPart;
+    if (rawRes > 0)
+		this->fixed_point = (floatPart >= 0.5f) ? intPart + 1.0f : intPart;
+	else if (rawRes <= 0)
+		this->fixed_point = (floatPart <= -0.5f) ? intPart - 1.0f : intPart;
 	std::cout << "Float constructor called\n";
 }
 
