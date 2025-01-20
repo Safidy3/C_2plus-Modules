@@ -10,19 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main()
 {
-	ClapTrap ct1("test1");
+	DiamondTrap ct1("test1");
 
 	ct1.showStats();
+
 	ct1.Attack("ct2");
 	ct1.showStats();
+
 	ct1.TakeDamage(5);
 	ct1.showStats();
+
 	ct1.BeRepaired(3);
 	ct1.showStats();
 
+	ct1.whoAmI();
 	return (0);
 }

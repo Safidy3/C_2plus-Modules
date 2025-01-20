@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: safandri <safandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/18 13:35:10 by safandri          #+#    #+#             */
-/*   Updated: 2025/01/19 10:28:51 by safandri         ###   ########.fr       */
+/*   Created: 2025/01/18 13:35:05 by safandri          #+#    #+#             */
+/*   Updated: 2025/01/19 10:30:26 by safandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
+# include <iostream>
 
-int main()
+class ClapTrap
 {
-	ClapTrap ct1("test1");
+	protected:
+		std::string	name;
+		int			hit_point;
+		int			energy;
+		int			attackDamage;
+	public:
+		ClapTrap();
+		ClapTrap(std::string name_);
+		~ClapTrap();
 
-	ct1.showStats();
-	ct1.Attack("ct2");
-	ct1.showStats();
-	ct1.TakeDamage(5);
-	ct1.showStats();
-	ct1.BeRepaired(3);
-	ct1.showStats();
+		void	showStats();
 
-	return (0);
-}
+		void	Attack(const std::string& target);
+		void	TakeDamage(unsigned int amount);
+		void	BeRepaired(unsigned int amount);
+};
+
+#endif

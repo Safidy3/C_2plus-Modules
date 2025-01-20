@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
-	ClapTrap ct1("test1");
+	FragTrap ct1("test1");
 
 	ct1.showStats();
 	ct1.Attack("ct2");
@@ -23,6 +23,7 @@ int main()
 	ct1.showStats();
 	ct1.BeRepaired(3);
 	ct1.showStats();
+	ct1.highFivesGuys();
 
 	return (0);
 }
