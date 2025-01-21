@@ -6,7 +6,7 @@
 /*   By: safandri <safandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 13:35:05 by safandri          #+#    #+#             */
-/*   Updated: 2025/01/19 10:30:26 by safandri         ###   ########.fr       */
+/*   Updated: 2025/01/21 14:12:45 by safandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class ClapTrap
 	public:
 		ClapTrap();
 		ClapTrap(std::string name_);
+		ClapTrap(ClapTrap const &obj);
+		ClapTrap&	operator=(const ClapTrap &obj);
 		~ClapTrap();
 
 		void	showStats();

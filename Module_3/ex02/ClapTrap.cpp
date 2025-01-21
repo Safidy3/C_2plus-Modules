@@ -6,7 +6,7 @@
 /*   By: safandri <safandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 13:35:08 by safandri          #+#    #+#             */
-/*   Updated: 2025/01/19 10:30:26 by safandri         ###   ########.fr       */
+/*   Updated: 2025/01/21 14:24:13 by safandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,26 @@ ClapTrap::ClapTrap(std::string name_) : name(name_), hit_point(10), energy(10), 
 ClapTrap::~ClapTrap()
 {
 	std::cout << "~ " << this->name << " ClapTrap has been deleted." << std::endl;
+}
+
+ClapTrap::ClapTrap(ClapTrap const &obj)
+{
+	this->name = obj.name;
+	this->hit_point = obj.hit_point;
+	this->energy = obj.energy;
+	this->attackDamage = obj.attackDamage;
+	std::cout << "ClapTrap Copy constructor called\n";
+}
+
+ClapTrap&	ClapTrap::operator=(const ClapTrap &obj)
+{
+	if (this == &obj)
+		return (*this);
+	this->name = obj.name;
+	this->hit_point = obj.hit_point;
+	this->energy = obj.energy;
+	this->attackDamage = obj.attackDamage;
+	std::cout << "ClapTrap copy assignment operator called\n";
 }
 
 void	ClapTrap::Attack(const std::string& target)

@@ -15,6 +15,29 @@ ScavTrap::ScavTrap(std::string name_) : ClapTrap(name_)
 	std::cout << "* " << this->name << " ScavTrap has been created." << std::endl;
 }
 
+ScavTrap::ScavTrap(ScavTrap const &obj)
+{
+	this->name = obj.name;
+	this->hit_point = obj.hit_point;
+	this->energy = obj.energy;
+	this->s_energy = obj.s_energy;
+	this->attackDamage = obj.attackDamage;
+	std::cout << "ScavTrap Copy constructor called\n";
+}
+
+ScavTrap&	ScavTrap::operator=(const ScavTrap &obj)
+{
+	if (this == &obj)
+		return (*this);
+	this->name = obj.name;
+	this->hit_point = obj.hit_point;
+	this->energy = obj.energy;
+	this->s_energy = obj.s_energy;
+	this->attackDamage = obj.attackDamage;
+	std::cout << "ScavTrap copy assignment operator called\n";
+}
+
+
 ScavTrap::~ScavTrap()
 {
 	std::cout << "~ " << this->name << " ScavTrap has been deleted." << std::endl;
