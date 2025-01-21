@@ -2,7 +2,7 @@
 
 DiamondTrap::DiamondTrap() 
 {
-	std::cout << "* " << "default DiamondTrap constructor called." << std::endl;
+	std::cout << "* " << "DiamondTrap default constructor called." << std::endl;
 }
 
 DiamondTrap::DiamondTrap(std::string name_) : ScavTrap(name_), FragTrap(name_)
@@ -12,7 +12,7 @@ DiamondTrap::DiamondTrap(std::string name_) : ScavTrap(name_), FragTrap(name_)
 	this->hit_point = FragTrap::f_hit_point;
 	this->energy = ScavTrap::s_energy;
 	this->attackDamage = FragTrap::f_attackDamage;
-	std::cout << "* " << this->name << " DiamondTrap has been created." << std::endl;
+	std::cout << "* " << this->name << " DiamondTrap constructor called" << std::endl;
 }
 
 DiamondTrap::~DiamondTrap()
@@ -27,7 +27,7 @@ DiamondTrap::DiamondTrap(DiamondTrap const &obj)
 	this->hit_point = FragTrap::f_hit_point;
 	this->energy = ScavTrap::s_energy;
 	this->attackDamage = FragTrap::f_attackDamage;
-	std::cout << "FragTrap Copy constructor called\n";
+	std::cout << "* DiamondTrap Copy constructor called\n";
 }
 
 DiamondTrap&	DiamondTrap::operator=(const DiamondTrap &obj)
@@ -39,7 +39,8 @@ DiamondTrap&	DiamondTrap::operator=(const DiamondTrap &obj)
 	this->hit_point = FragTrap::f_hit_point;
 	this->energy = ScavTrap::s_energy;
 	this->attackDamage = FragTrap::f_attackDamage;
-	std::cout << "FragTrap copy assignment operator called\n";
+	std::cout << "* DiamondTrap copy assignment operator called\n";
+	return (*this);
 }
 
 void	DiamondTrap::Attack(const std::string& target)
