@@ -6,7 +6,7 @@
 /*   By: safandri <safandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 13:35:08 by safandri          #+#    #+#             */
-/*   Updated: 2025/01/21 14:58:45 by safandri         ###   ########.fr       */
+/*   Updated: 2025/01/22 15:07:55 by safandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ClapTrap::ClapTrap() 
 {
-	std::cout << "* " << "ClapTrap default constructor called." << std::endl;
+	std::cout << "* ClapTrap default constructor called." << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name_) : name(name_), hit_point(10), energy(10), attackDamage(0)
@@ -50,19 +50,23 @@ ClapTrap&	ClapTrap::operator=(const ClapTrap &obj)
 
 void	ClapTrap::Attack(const std::string& target)
 {
-	if (this->energy == 0 || this->hit_point == 0)
+	if (this->energy <= 0 || this->hit_point <= 0)
 		return ;
 	std::cout << this->name << " ClapTrap attack " << target << std::endl;
 	this->energy--;
+	if (this->energy <= 0)
+		this->energy = 0;
 }
 
 void	ClapTrap::BeRepaired(unsigned int amount)
 {
-	if (this->energy == 0 || this->hit_point == 0)
+	if (this->energy <= 0 || this->hit_point <= 0)
 		return ;
 	std::cout << this->name << " ClapTrap repaired himself = " << amount << std::endl;
 	this->hit_point += amount;
 	this->energy--;
+	if (this->energy <= 0)
+		this->energy = 0;
 }
 
 void	ClapTrap::TakeDamage(unsigned int amount)

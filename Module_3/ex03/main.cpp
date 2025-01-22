@@ -6,7 +6,7 @@
 /*   By: safandri <safandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 13:35:10 by safandri          #+#    #+#             */
-/*   Updated: 2025/01/21 15:01:13 by safandri         ###   ########.fr       */
+/*   Updated: 2025/01/22 15:22:55 by safandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,11 @@
 int main()
 {
 	DiamondTrap ct1("test1");
+	std::cout << "\n";
 	DiamondTrap ct2;
+	std::cout << "\n";
 	DiamondTrap ct3(ct1);
+	std::cout << "\n";
 
 	ct2 = ct1;
 

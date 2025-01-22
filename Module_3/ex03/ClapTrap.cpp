@@ -6,13 +6,13 @@
 /*   By: safandri <safandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 13:35:08 by safandri          #+#    #+#             */
-/*   Updated: 2025/01/21 14:58:45 by safandri         ###   ########.fr       */
+/*   Updated: 2025/01/22 14:57:23 by safandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() 
+ClapTrap::ClapTrap()
 {
 	std::cout << "* " << "ClapTrap default constructor called." << std::endl;
 }

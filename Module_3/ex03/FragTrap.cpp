@@ -1,8 +1,13 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap() 
+FragTrap::FragTrap() : ClapTrap()
 {
-	std::cout << "* " << "default FragTrap constructor called." << std::endl;
+	this->energy = 100;
+	this->f_hit_point = 100;
+	this->f_attackDamage = 30;
+	this->hit_point = 100;
+	this->attackDamage = 30;
+	std::cout << "* FragTrap default constructor called." << std::endl;
 }
 
 FragTrap::FragTrap(std::string name_) : ClapTrap(name_)
@@ -21,7 +26,7 @@ FragTrap::~FragTrap()
 	std::cout << "~ " << this->name << " FragTrap has been deleted." << std::endl;
 }
 
-FragTrap::FragTrap(FragTrap const &obj)
+FragTrap::FragTrap(FragTrap const &obj) : ClapTrap(obj)
 {
 	this->name = obj.name;
 	this->hit_point = obj.hit_point;
@@ -29,24 +34,27 @@ FragTrap::FragTrap(FragTrap const &obj)
 	this->energy = obj.energy;
 	this->attackDamage = obj.attackDamage;
 	this->f_attackDamage = obj.f_attackDamage;
-	std::cout << "FragTrap Copy constructor called\n";
+	std::cout << "* FragTrap Copy constructor called\n";
 }
 
 FragTrap&	FragTrap::operator=(const FragTrap &obj)
 {
 	if (this == &obj)
 		return (*this);
+	ClapTrap::operator=(obj);
 	this->name = obj.name;
 	this->hit_point = obj.hit_point;
 	this->f_hit_point = obj.f_hit_point;
 	this->energy = obj.energy;
 	this->attackDamage = obj.attackDamage;
 	this->f_attackDamage = obj.f_attackDamage;
-	std::cout << "FragTrap copy assignment operator called\n";
+	std::cout << "* FragTrap copy assignment operator called\n";
 	return (*this);
 }
 
 void	FragTrap::highFivesGuys()
 {
+	if (this->energy <= 0 || this->f_hit_point <= 0)
+		return ;
 	std::cout << this->name << " request a positive high fives\n";
 }
