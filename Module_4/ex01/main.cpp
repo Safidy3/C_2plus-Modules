@@ -13,44 +13,34 @@
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 
 int main()
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	// Dog dog1;
+	// Dog dog2 = dog1;
 
-	std::cout << j->getType() << "" << std::endl;
-	std::cout << i->getType() << "" << std::endl;
-	std::cout << meta->getType() << "" << std::endl;
+	int n = 4;
+	Animal* animals[n];
 
-	i->makeSound();
-	j->makeSound();
-	meta->makeSound();
+	for (int i = 0; i < n / 2; ++i)
+	{
+		animals[i] = new Dog();
+		std::cout << "\n";
+	}
 
-	delete meta;
-	delete j;
-	delete i;
+	for (int i = n / 2; i < n; ++i)
+	{
+		animals[i] = new Cat();
+		std::cout << "\n";
+	}
 
-	std::cout << "\n\n******************************************\n\n" << std::endl;
+	std::cout << "\n";
+	
+	for (int i = 1; i < n; ++i)
+	{
+		delete animals[i];
+		std::cout << "\n";
+	}
 
-	const WrongAnimal*	wrongAnimal;
-	const WrongAnimal*	wrongCat;
-	const WrongCat	wrongCat2;
-
-	wrongAnimal = new WrongAnimal();
-	wrongCat = new WrongCat();
-
-	std::cout << wrongAnimal->getType() << "" << std::endl;
-	std::cout << wrongCat->getType() << "" << std::endl;
-
-	wrongAnimal->makeSound();
-	wrongCat->makeSound();
-	wrongCat2.makeSound();
-
-	delete wrongAnimal;
-	delete wrongCat;
-	return (0);
+	return 0;
 }
