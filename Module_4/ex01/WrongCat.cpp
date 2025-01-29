@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: safandri <safandri@student.42antananari    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/29 13:13:51 by safandri          #+#    #+#             */
+/*   Updated: 2025/01/29 13:13:52 by safandri         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "WrongCat.hpp"
 
 WrongCat::WrongCat()
@@ -16,7 +28,7 @@ WrongCat& WrongCat::operator=(const WrongCat& other)
     if (this != &other)
         WrongAnimal::operator=(other);
     std::cout << "* WrongCat assignment operator called" << std::endl;
-    return (*this);
+    return *this;
 }
 
 WrongCat::~WrongCat()
