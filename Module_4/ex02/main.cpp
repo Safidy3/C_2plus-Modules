@@ -6,7 +6,7 @@
 /*   By: safandri <safandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 15:44:17 by safandri          #+#    #+#             */
-/*   Updated: 2025/01/28 15:45:56 by safandri         ###   ########.fr       */
+/*   Updated: 2025/01/29 13:25:40 by safandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int main()
 	dog->makeSound();
 
 	// Animal	heap;
+	// Animal*	heap = new Animal();
 
 	delete dog;
 	return 0;

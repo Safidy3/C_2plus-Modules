@@ -6,7 +6,7 @@
 /*   By: safandri <safandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 15:44:45 by safandri          #+#    #+#             */
-/*   Updated: 2025/01/28 15:44:46 by safandri         ###   ########.fr       */
+/*   Updated: 2025/01/29 14:46:52 by safandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,36 @@
 
 Dog::Dog()
 {
-    brain = new Brain();
-    type = "Dog";
-    std::cout << "* Dog default constructor called" << std::endl;
+	brain = new Brain();
+	type = "Dog";
+	std::cout << "* Dog default constructor called" << std::endl;
 }
 
 Dog::Dog(const Dog& other) : Animal(other)
 {
-    brain = new Brain(*other.brain);
-    std::cout << "* Dog copy constructor called" << std::endl;
+	brain = new Brain(*other.brain);
+	std::cout << "* Dog copy constructor called" << std::endl;
 }
 
 Dog&	Dog::operator=(const Dog& other)
 {
-    if (this != &other)
-    {
-        Animal::operator=(other);
-        delete brain;
-        brain = new Brain(*other.brain);
-    }
-    std::cout << "* Dog assignment operator called" << std::endl;
-    return (*this);
+	if (this != &other)
+	{
+		Animal::operator=(other);
+		delete brain;
+		brain = new Brain(*other.brain);
+	}
+	std::cout << "* Dog assignment operator called" << std::endl;
+	return (*this);
 }
 
 Dog::~Dog()
 {
-    delete brain;
-    std::cout << "~ Dog destructor called" << std::endl;
+	delete brain;
+	std::cout << "~ Dog destructor called" << std::endl;
 }
 
 void	Dog::makeSound() const
 {
-    std::cout << "Woof! Woof!" << std::endl;
+	std::cout << "Woof! Woof!" << std::endl;
 }
