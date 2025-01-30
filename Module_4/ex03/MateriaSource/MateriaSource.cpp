@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: safandri <safandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/29 15:07:13 by safandri          #+#    #+#             */
-/*   Updated: 2025/01/29 15:39:23 by safandri         ###   ########.fr       */
+/*   Created: 2025/01/30 14:37:53 by safandri          #+#    #+#             */
+/*   Updated: 2025/01/30 16:34:01 by safandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CURE_HPP
-#define CURE_HPP
+#include "MateriaSource.hpp"
 
-#include "AMateria.hpp"
+MateriaSource::MateriaSource() {}
 
-class Cure : public AMateria
+MateriaSource::MateriaSource(const MateriaSource& other) {}
+
+MateriaSource::~MateriaSource() {}
+
+MateriaSource&	MateriaSource::operator=(const MateriaSource& other)
 {
-	public:
-		Cure();
-		Cure(std::string const& type);
-		Cure(const Cure& other);
-		~Cure();
+	return (*this);
+}
 
-		Cure&			operator=(const Cure& other);
-		AMateria*		clone() const;
-		virtual void	use(ICharacter& target);
-};
+void		MateriaSource::learnMateria(AMateria*)
+{
 
-#endif
+}
+
+AMateria*	MateriaSource::createMateria(std::string const& type)
+{
+
+}

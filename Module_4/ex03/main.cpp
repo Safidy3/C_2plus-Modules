@@ -6,22 +6,41 @@
 /*   By: safandri <safandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 15:44:17 by safandri          #+#    #+#             */
-/*   Updated: 2025/01/29 14:04:03 by safandri         ###   ########.fr       */
+/*   Updated: 2025/01/30 18:06:27 by safandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
+#include <iostream>
+#include <string>
+#include "./Character/Character.hpp"
+#include "./Material/Cure.hpp"
+#include "./Material/Ice.hpp"
+// #include "./MateriaSource/MateriaSource.hpp"
 
 int main()
 {
-	Animal* dog = new Dog();
-	dog->makeSound();
+	// IMateriaSource*	src = new MateriaSource();
+	// src->learnMateria(new Cure());
+	// src->learnMateria(new Ice());
+	// tmp = src->createMateria("ice");
 
-	// Animal	heap;
-	// Animal*	heap = new Animal();
+	// ICharacter*		me = new Character("me");
+	// ICharacter*		bob;
 
-	delete dog;
-	return 0;
+	AMateria*		tmp = new Cure("Wind");
+
+	Character me("s");
+	me.equip(tmp);
+
+	Character me2(me);
+	// me2 = me;
+	me2.print_materias();
+
+	// bob->print_materias();
+
+	// delete me;
+	// delete bob;
+	// delete tmp;
+
+	return (0);
 }

@@ -6,21 +6,20 @@
 /*   By: safandri <safandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 14:29:27 by safandri          #+#    #+#             */
-/*   Updated: 2025/01/29 15:51:47 by safandri         ###   ########.fr       */
+/*   Updated: 2025/01/30 16:29:15 by safandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef AMATERIA_HPP
 #define AMATERIA_HPP
 
-#include <iostream>
-#include <string>
-#include "ICharacter.hpp"
+#include "../Character/ICharacter.hpp"
+#include "../main_include.hpp"
 
 class AMateria
 {
 	protected:
-		std::string const&  type;
+		std::string	type;
 	public:
 		AMateria();
 		AMateria(std::string const& type);
@@ -28,8 +27,8 @@ class AMateria
 		virtual ~AMateria();
 		AMateria&			operator=(const AMateria& other);
 
-		std::string const&  getType() const;
 		virtual AMateria*   clone() const = 0;
+		std::string const&  getType() const;
 		virtual void        use(ICharacter& target);
 };
 

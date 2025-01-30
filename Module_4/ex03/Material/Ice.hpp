@@ -6,7 +6,7 @@
 /*   By: safandri <safandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 15:07:08 by safandri          #+#    #+#             */
-/*   Updated: 2025/01/29 15:41:44 by safandri         ###   ########.fr       */
+/*   Updated: 2025/01/30 16:01:58 by safandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define ICE_HPP
 
 #include "AMateria.hpp"
+#include "../main_include.hpp"
 
 class Ice : public AMateria
 {
@@ -25,7 +26,7 @@ class Ice : public AMateria
 
 		Ice&			operator=(const Ice& other);
 		AMateria*		clone() const;
-		virtual void	use(ICharacter& target);
+		void			use(ICharacter& target);
 };
 
 #endif

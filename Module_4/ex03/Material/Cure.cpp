@@ -1,39 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: safandri <safandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/29 15:07:10 by safandri          #+#    #+#             */
-/*   Updated: 2025/01/29 16:50:51 by safandri         ###   ########.fr       */
+/*   Created: 2025/01/29 15:07:15 by safandri          #+#    #+#             */
+/*   Updated: 2025/01/30 16:01:03 by safandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#include "Cure.hpp"
 
-Ice::Ice() : AMateria("ice") {}
+Cure::Cure() : AMateria("cure") {}
 
-Ice::Ice(std::string const& type) : AMateria(type) {}
+Cure::Cure(std::string const& type) : AMateria(type) {}
 
-Ice::Ice(const Ice& other) : AMateria(other) {}
+Cure::Cure(const Cure& other) : AMateria(other) {}
 
-Ice::~Ice() {}
+Cure::~Cure() {}
 
-Ice&	Ice::operator=(const Ice& other)
+Cure&	Cure::operator=(const Cure& other)
 {
-	if (&other != this)
-		;
+	(void)other;
 	return (*this);
 }
 
-AMateria*	Ice::clone() const
+AMateria*	Cure::clone() const
 {
-	AMateria* clone = new Ice(this->type);
+	AMateria* clone = new Cure(this->type);
 	return (clone);
 }
 
-void	Ice::use(ICharacter& target)
+void	Cure::use(ICharacter& target)
 {
 	std::cout << "* heals " << target.getName() << "’s wounds *\n";
 }

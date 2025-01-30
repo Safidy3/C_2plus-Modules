@@ -1,9 +1,14 @@
 
 NAME = Animal
 
-SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+SRCS =  main.cpp \
+		./Character/Character.cpp \
+		./Material/AMateria.cpp ./Material/Cure.cpp ./Material/Ice.cpp \
+		./MateriaSource/MateriaSource.cpp
+		
 
-FLAGS = -Wall -Werror -Wextra -std=c++98
+# FLAGS = -Wall -Werror -Wextra -std=c++98
+FLAGS = -g -std=c++98
 CC = c++
 
 OBJS = $(SRCS:.cpp=.o)
