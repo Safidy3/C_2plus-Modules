@@ -6,7 +6,7 @@
 /*   By: safandri <safandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 14:30:27 by safandri          #+#    #+#             */
-/*   Updated: 2025/01/30 16:35:13 by safandri         ###   ########.fr       */
+/*   Updated: 2025/01/31 16:13:42 by safandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 
 class MateriaSource : public IMateriaSource
 {
+	private:
+		AMateria*	materias[4];
 	public:
 		MateriaSource();
 		MateriaSource(const MateriaSource& other);

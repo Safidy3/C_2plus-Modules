@@ -6,7 +6,7 @@
 /*   By: safandri <safandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 15:32:23 by safandri          #+#    #+#             */
-/*   Updated: 2025/01/30 17:55:46 by safandri         ###   ########.fr       */
+/*   Updated: 2025/01/31 15:55:27 by safandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class ICharacter
 		virtual void equip(AMateria* m) = 0;
 		virtual void unequip(int idx) = 0;
 		virtual void use(int idx, ICharacter& target) = 0;
+
+		virtual void print_materias() = 0;
 };
 
 #endif

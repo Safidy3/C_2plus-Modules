@@ -6,7 +6,7 @@
 /*   By: safandri <safandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 17:04:13 by safandri          #+#    #+#             */
-/*   Updated: 2025/01/30 15:18:04 by safandri         ###   ########.fr       */
+/*   Updated: 2025/01/31 16:29:57 by safandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define IMATERIASOURCE_HPP
 
 #include "../Material/AMateria.hpp"
+#include "../Material/Cure.hpp"
+#include "../Material/Ice.hpp"
 #include "../main_include.hpp"
 
 class IMateriaSource

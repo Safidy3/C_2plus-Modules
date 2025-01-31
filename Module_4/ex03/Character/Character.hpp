@@ -6,7 +6,7 @@
 /*   By: safandri <safandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 13:51:02 by safandri          #+#    #+#             */
-/*   Updated: 2025/01/30 17:55:51 by safandri         ###   ########.fr       */
+/*   Updated: 2025/01/31 15:54:48 by safandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class Character : public ICharacter
 		void				equip(AMateria* m);
 		void				unequip(int idx);
 		void				use(int idx, ICharacter& target);
+
 		void				print_materias();
 };
 

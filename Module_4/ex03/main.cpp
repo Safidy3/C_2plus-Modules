@@ -6,7 +6,7 @@
 /*   By: safandri <safandri@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 15:44:17 by safandri          #+#    #+#             */
-/*   Updated: 2025/01/30 18:06:27 by safandri         ###   ########.fr       */
+/*   Updated: 2025/01/31 17:13:00 by safandri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,32 +15,31 @@
 #include "./Character/Character.hpp"
 #include "./Material/Cure.hpp"
 #include "./Material/Ice.hpp"
-// #include "./MateriaSource/MateriaSource.hpp"
+#include "./MateriaSource/MateriaSource.hpp"
 
 int main()
 {
-	// IMateriaSource*	src = new MateriaSource();
-	// src->learnMateria(new Cure());
-	// src->learnMateria(new Ice());
-	// tmp = src->createMateria("ice");
+	IMateriaSource* src = new MateriaSource();
+	ICharacter*		me = new Character("me");
+	ICharacter*		bob = new Character("bob");
+	AMateria*		tmp;
 
-	// ICharacter*		me = new Character("me");
-	// ICharacter*		bob;
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
 
-	AMateria*		tmp = new Cure("Wind");
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
 
-	Character me("s");
-	me.equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	
 
-	Character me2(me);
-	// me2 = me;
-	me2.print_materias();
+	me->use(0, *bob);
+	me->use(1, *bob);
+	
+	delete bob;
+	delete me;
+	delete src;
 
-	// bob->print_materias();
-
-	// delete me;
-	// delete bob;
-	// delete tmp;
-
-	return (0);
+	return 0;
 }
