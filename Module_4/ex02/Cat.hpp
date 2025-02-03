@@ -22,6 +22,7 @@ class Cat : public Animal
 		Brain* brain;
 	public:
 		Cat();
+		Cat(const std::string &type);
 		Cat(const Cat& other);
 		~Cat();
 		Cat&	operator=(const Cat& other);

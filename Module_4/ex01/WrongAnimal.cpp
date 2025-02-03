@@ -17,8 +17,14 @@ WrongAnimal::WrongAnimal() : type("WrongAnimal")
 	std::cout << "* WrongAnimal default constructor called" << std::endl;
 }
 
+WrongAnimal::WrongAnimal(const std::string &type) : type(type)
+{
+	std::cout << "* WrongAnimal constructor called" << std::endl;
+}
+
 WrongAnimal::WrongAnimal(const WrongAnimal& other) : type(other.type)
 {
+	this->type = type;
 	std::cout << "* WrongAnimal copy constructor called" << std::endl;
 }
 

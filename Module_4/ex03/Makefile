@@ -1,5 +1,5 @@
 
-NAME = Animal
+NAME = game
 
 SRCS =  main.cpp \
 		./Character/Character.cpp \

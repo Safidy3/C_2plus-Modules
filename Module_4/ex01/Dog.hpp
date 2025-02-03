@@ -22,6 +22,7 @@ class Dog : public Animal
 		Brain*	brain;
 	public:
 		Dog();
+		Dog(const std::string &type);
 		Dog(const Dog& other);
 		~Dog();
 		Dog&	operator=(const Dog& other);
